@@ -1,1 +1,53 @@
-test
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    {% block meta %}{% endblock %}
+
+
+    <title>Find My Furry Friend</title>
+</head>
+<body>
+    <header class="header">Find My Furry Friend
+    </header>
+    <div class="links">
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/">Profile</a>
+        <a class="link" href="/">Lost Pets</a>
+        <a class="link" href="/">Information</a>
+        <a class="link" href="/">Log Out</a>
+    </div>
+
+    {% block content %}
+    <main>
+
+    <div class="column-left">
+
+    </div>
+    
+    <div class="column-right">
+
+    </div>
+
+    <div class="middle-container">
+
+    <div class="blurb">
+        <p class="blurb-text">This is sample text to see how things look. gtgeoias abithreiwohr awfioaehsfil kfrea fesk eflakweh fiuhkawel fheawlk fawie flakw faewk fawehkufl kawe faewl fkawehflaewihf ,wf ailwhf kaewfl qwe</p>
+    </div>
+
+
+
+
+    </div>
+    </main>
+
+    {% endblock %}
+    
+</body>
+</html>
+
