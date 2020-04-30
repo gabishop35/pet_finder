@@ -21,6 +21,12 @@ from pet_finder import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name="home"),
+    path('pet/add/', views.add_pet, name='add-pet'),
+    path('pet/<int:pk>/edit/', views.edit_pet, name='edit-pet'),
+    path('pet/<int:pk>/delete/', views.delete_pet, name='delete-pet'),
+    path('profile/', views.profile_page, name='profile-page'),
+    path('information/', views.info, name='info'),
+
 
 ]
 

@@ -16,6 +16,7 @@ body {
     border: solid black 1rem;
     color: white;
     font-family: sans-serif;
+    text-shadow: .5rem .5rem .25rem #000;
 }
 
 .links {
@@ -49,10 +50,9 @@ body {
 .middle-container {
     width: 50%;
     display:flex;
-    justify-content: center;
-    align-items: center;
     border-left: .25rem solid black;
     border-right: .25rem solid black;
+    height: 1000px;
 
 }
 
@@ -61,6 +61,12 @@ body {
     background: white;
     float: left;
     height: 1000px;
+}
+
+.column-pic {
+    max-width: 100%;
+    align-items: center;
+    padding-right: 4rem;
 }
 
 .column-right {

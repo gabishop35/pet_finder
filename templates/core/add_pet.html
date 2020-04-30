@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class='lost-pet-form'>
+    <form method='POST' class='pet' enctype="multipart/form-data">
+        <h2 class='catch-form-title'>Register Your Lost Pet</h2>
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="save-button">Save</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -17,9 +17,9 @@
     </header>
     <div class="links">
         <a class="link" href="/">Home</a>
-        <a class="link" href="/">Profile</a>
+        <a class="link" href="{% url 'profile-page' %}">Profile</a>
         <a class="link" href="/">Lost Pets</a>
-        <a class="link" href="/">Information</a>
+        <a class="link" href="{% url 'info' %}">Information</a>
         <a class="link" href="/">Log Out</a>
     </div>
 
@@ -27,10 +27,16 @@
     <main>
 
     <div class="column-left">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
 
     </div>
     
     <div class="column-right">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
 
     </div>
 
@@ -40,13 +46,11 @@
         <p class="blurb-text">This is sample text to see how things look. gtgeoias abithreiwohr awfioaehsfil kfrea fesk eflakweh fiuhkawel fheawlk fawie flakw faewk fawehkufl kawe faewl fkawehflaewihf ,wf ailwhf kaewfl qwe</p>
     </div>
 
-
-
-
     </div>
+    {% endblock %}
+
     </main>
 
-    {% endblock %}
     
 </body>
 </html>
