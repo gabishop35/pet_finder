@@ -1,8 +1,10 @@
 from django.db import models
+from users.models import User
 
 STATE_CHOICES = []
 
 class Pet(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(upload_to='', blank=True, null=True)
     name = models.CharField(max_length=60)
     animal = models.CharField(max_length=15)
@@ -17,3 +19,7 @@ class Pet(models.Model):
     state = models.CharField(max_length=2)
     reward = models.CharField(max_length=15, blank=True, null=True)
     description = models.TextField(max_length=400, blank=True, null=True)
+
+
+class Post(models.Model):
+    pass
