@@ -4,9 +4,49 @@
 {% block content %}
 
 <body>
-    <div class='button'>
-        <a class='add-button' href="{% url 'add-pet' %}">Register Your Pet</a>
+
+    <div class="column-left">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
     </div>
+    
+    <div class="column-right">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+        <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
+    </div>
+
+
+        <div class='button'>
+            <a class='add-button' href="{% url 'add-pet' %}">Register Your Pet</a>
+        </div>
+
+        <div>
+            <h1 class='profile-header'>Hello {{ user.username }}, here are your registered pet(s)</h1>
+        </div>
+
+        <div class='profile-pet'>
+            {% for pet in pets.all %}
+
+            {% if pet.image %}
+            <img src= "{{ pet.image }}">
+
+            {% if pet.name %}
+            <p class='pet-name'> {{ pet.name }} </p>
+
+
+            {% else %}
+
+        <p class='question-mark'>?</p>
+            {% endif %}
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
 
 
 </body>
