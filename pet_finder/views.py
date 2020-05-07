@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pet
+from users.models import User
 from pet_finder.forms import PetForm
+from django.contrib.auth.decorators import login_required
+
 
 
 def homepage(request):
@@ -39,6 +42,7 @@ def delete_pet(request, pk):
     pet.delete()
     return redirect('pet-page')
 
+@login_required
 def profile_page(request):
     pets = Pet.objects.filter(user=request.user)
     return render(request, 'core/profile_page.html', {'pets': pets})

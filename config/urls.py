@@ -26,6 +26,7 @@ urlpatterns = [
     path('pet/<int:pk>/delete/', views.delete_pet, name='delete-pet'),
     path('profile/', views.profile_page, name='profile-page'),
     path('information/', views.info, name='info'),
+    path('accounts/', include('registration.backends.simple.urls')),
 
 
 ]
