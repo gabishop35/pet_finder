@@ -33,16 +33,20 @@
 
             {% if pet.image %}
             <img src= "{{ pet.image }}">
+           
+            {% else %}
+            {% endif %}
+
+            <p class='question-mark'>?</p>
 
             {% if pet.name %}
             <p class='pet-name'> {{ pet.name }} </p>
 
 
-            {% else %}
 
-        <p class='question-mark'>?</p>
-            {% endif %}
-            {% endif %}
+
+
+        {% endif %}
 
             {% endfor %}
 

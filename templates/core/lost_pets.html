@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="column-left">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
+</div>
+
+<div class="column-right">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
+</div>
+
+{% for pet in pets %}
+<img src='{{ pet.image }}'>
+<p class='lost-pet-name'>{{pet.name}}</p>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="column-left">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
+</div>
+
+<div class="column-right">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+    <img src="{% static 'cat-stretch-black-silhouette.jpg' %}" class="column-pic">
+
+</div>
+
+
+<div class='button'>
+    <a class='submit-button' href="{% url 'post-found-pet' %}">Post Found Pet</a>
+</div>
+<div>
+    <h1 class='found-pets-text'> Submit Found Pets here</h1>
+    <h2 class='found-pets-text'>See if you recognize any pets</h2>
+</div>
+<div class="found-pets">
+    {% for foundpet in foundpets %}
+    <div>
+        <p>{{foundpet.animal}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

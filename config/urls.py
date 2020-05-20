@@ -26,10 +26,16 @@ urlpatterns = [
     path('pet/<int:pk>/delete/', views.delete_pet, name='delete-pet'),
     path('profile/', views.profile_page, name='profile-page'),
     path('information/', views.info, name='info'),
+    path('found/', views.found_pets, name='found-pets'),
+    path('found/post/', views.post_found_pet, name='post-found-pet'),
+    path('lost/', views.lost_pets, name='lost-pets'),
     path('accounts/', include('registration.backends.simple.urls')),
 
 
 ]
+
+    # + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
 
 if settings.DEBUG:
     import debug_toolbar

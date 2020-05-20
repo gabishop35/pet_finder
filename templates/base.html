@@ -18,7 +18,8 @@
     <div class="links">
         <a class="link" href="/">Home</a>
         <a class="link" href="{% url 'profile-page' %}">Profile</a>
-        <a class="link" href="/">Lost Pets</a>
+        <a class="link" href="{% url 'lost-pets' %}">Lost Pets</a>
+        <a class="link" href="{% url 'found-pets' %}">Found Pets</a>
         <a class="link" href="{% url 'info' %}">Information</a>
         <a class="link" href="/">Log Out</a>
     </div>
@@ -43,7 +44,24 @@
     <div class="middle-container">
 
     <div class="blurb">
-        <p class="blurb-text">This is sample text to see how things look. gtgeoias abithreiwohr awfioaehsfil kfrea fesk eflakweh fiuhkawel fheawlk fawie flakw faewk fawehkufl kawe faewl fkawehflaewihf ,wf ailwhf kaewfl qwe</p>
+        <p class="blurb-text">Welcome to Find My Furry Friend.</p>
+        <p class="blurb-text">We are your all-in-one source to help locate lost pets.</p>
+        <p class="blurb-text">We know that losing a pet is devastating and can make you feel overwhelmed. We have compliled a collection of resources, as well as a strong community, to help you in your time of need.</p>
+        <p class="blurb-text">Please feel free to browse our posted missing pets.</p>
+        <p class="blurb-text">Create a profile or log in to post your own lost pet.</p>
+        <p class="blurb-text">Have you seen a lost animal in your neighborhood? Post it on our Found Pets section.</p>
+        <p class="blurb-text">Check out Information for tips and helpful links to guide you through your search.</p>
+        <div class='pet-box'>
+            <a class='question-mark' href ="{% url 'add-pet' %}">?</a>
+            <p class="pet-box-text">Post Your Lost Pet Now</p>
+        </div>
+
+
+
+
+
+
+
     </div>
 
     </div>
