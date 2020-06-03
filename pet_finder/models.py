@@ -7,7 +7,7 @@ STATE_CHOICES = []
 
 class Pet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to='pet/', blank=True, null=True)
+    image = models.ImageField(upload_to='', blank=True, null=True)
     name = models.CharField(max_length=60)
     animal = models.CharField(max_length=15)
     gender = models.CharField(max_length=7)
