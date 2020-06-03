@@ -88,7 +88,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {'default': env.db()}
+# DATABASES = {'default': env.db()}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'findmyfurryfriend',
+        'USER': 'petfinder',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -142,6 +152,9 @@ AUTH_USER_MODEL = 'users.User'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
+LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com/profile/'
+
+
 # Debug toolbar config
 
 INTERNAL_IPS = [
@@ -149,3 +162,22 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+if env('USE_S3'):
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+    }
+    DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
+
+
+import django_heroku
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
