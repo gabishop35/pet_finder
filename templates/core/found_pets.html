@@ -28,7 +28,8 @@
 <div class="found-pets">
     {% for foundpet in foundpets %}
     <div>
-        <p>{{foundpet.animal}}</p>
+        <img src='{{ foundpet.image.url }}'>
+        <p>{{ foundpet.animal }}</p>
     </div>
     {% endfor %}
 </div>

@@ -32,12 +32,13 @@
             {% for pet in pets.all %}
 
             {% if pet.image %}
-            <img src= "{{ pet.image }}">
+            <img src= "{{ pet.image.url }}">
            
             {% else %}
-            {% endif %}
 
             <p class='question-mark'>?</p>
+            {% endif %}
+
 
             {% if pet.name %}
             <p class='pet-name'> {{ pet.name }} </p>
