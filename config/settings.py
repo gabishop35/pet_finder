@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Third-party
     'debug_toolbar',
     'django_extensions',
+    'storages',
 
     # Project-specific
     'users',
@@ -167,15 +168,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
 
-if env('USE_S3'):
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400'
-    }
-    DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
+# if env('USE_S3'):
+#     AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+#     AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+#     AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+#     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+#     AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400'
+#     }
+#     DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
 
 
 import django_heroku
