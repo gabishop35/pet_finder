@@ -85,6 +85,11 @@ body {
     margin-right: 10rem;
 }
 
+.pet-image {
+    height: 5rem;
+    width: 5rem;
+}
+
 .question-mark {
     font-size: 20rem;
 }
