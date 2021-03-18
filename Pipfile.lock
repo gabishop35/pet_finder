@@ -5,7 +5,7 @@
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.6.1"
+            "python_version": "3.7"
         },
         "sources": [
             {
@@ -51,7 +51,7 @@
                 "sha256:e1630333248c9b3d4e38f02093a26f1e07b271ca896d73097457996e0fae12e8"
             ],
             "index": "pypi",
-            "version": "==3.0.7"
+            "version": "==3.6.1"
         },
         "django-debug-toolbar": {
             "hashes": [
@@ -150,7 +150,7 @@
                 "sha256:f784aad988f12c80aacfa5b381ec21fd3f38f851720f652b9f33facc5101cf4d"
             ],
             "index": "pypi",
-            "version": "==7.1.2"
+            "version": "==8.1.1"
         },
         "psycopg2": {
             "hashes": [
